@@ -13,17 +13,48 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.fleettrackingapp",
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "This app needs access to your location to track delivery agents.",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "This app needs access to your location for background tracking."
+      },
+      "config": {
+        "googleMapsApiKey": "AIzaSyDUMMY-KEY-FOR-TESTING-ONLY12345"
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "package": "com.fleettrackingapp",
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_BACKGROUND_LOCATION"
+      ],
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyDUMMY-KEY-FOR-TESTING-ONLY12345"
+        }
+      }
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Allow FleetTrackingApp to use your location for background tracking."
+        }
+      ],
+      [
+        "expo-task-manager",
+        {}
+      ]
+    ]
   }
 }
